@@ -18,4 +18,8 @@ const getTodos = async (req, res, next) => {
     }
 };
 
-module.exports = { createTodo, getTodos };
+const getTodoById = (req, res, next) => {
+
+};
+
+module.exports = { createTodo, getTodos, getTodoById };

@@ -67,3 +67,9 @@ describe('TodoController.getTodos', () => {
         expect(next).toHaveBeenCalledWith(errorMessage);
     })
 })
+
+describe('TodoController.getTodoById', () => {
+    it('should have a getTodoById', () => {
+        expect(typeof TodoController.getTodoById).toBe('function')
+    })
+})
