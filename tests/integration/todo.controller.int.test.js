@@ -70,4 +70,15 @@ describe(endpointUrl, () => {
             .send(testData)
         expect(res.statusCode).toBe(404)
     })
+    it('DELETE ' + endpointUrl, async () => {
+        const response = await request(app)
+            .delete(endpointUrl + newTodoId);
+        expect(response.statusCode).toBe(200);
+        expect(response.body.message).toBe('Todo deleted successfully');
+    });
+    it('should return 404 on DELETE when todo does not exist', async () => {
+        const response = await request(app)
+            .delete(endpointUrl + notExistingTodoId);
+        expect(response.statusCode).toBe(404);
+    });
 })
